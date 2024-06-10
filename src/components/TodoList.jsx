@@ -1,11 +1,14 @@
+import { useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
 
-export default function TodoList({ isDone }) {
+export default function TodoList({ text, todos }) {
   return (
     <section>
-      <h2>Working...</h2>
+      <h2>{text}</h2>
       <ul>
-        <TodoItem />
+        {todos.map((item) => {
+          return <TodoItem item={item} />;
+        })}
       </ul>
     </section>
   );
